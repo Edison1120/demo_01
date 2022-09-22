@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button class="btn">点击抽奖</button>
+    </div>
+
+
+    <script>
+        function rand(m, n) {
+            return Math.ceil(Math.random() * (n - m + 1)) + m - 1;
+        }
+        //点击按钮，2s后显示是否中奖（概率为百分之30）
+        //如果中奖弹出：恭喜中奖， 没中奖弹出：再接再厉
+
+        //获取元素对象
+        const btn = document.querySelector('.btn');
+        //绑定单击事件
+        btn.addEventListener('click', function () {
+            //绑定事件
+            const p = new Promise((resolve, reject) => {
+                //设置计时器
+                setTimeout(() => {
+                    //设置百分之30成功率
+                    //获取0-100的一个随机数
+                    let n = rand(1, 100);
+                    if (n <= 30) {
+                        resolve(n);
+                    } else {
+                        reject(n)
+                    }
+                }, 2000);
+            });
+
+            //调用.then方法
+            p.then((resolve) => {
+                alert('恭喜中奖,你的号码为' + resolve)
+            }, (reject) => {
+                alert('再接再厉，你的号码为' + reject)
+            }
+            )
+        })
+    </script>
+</body>
+
+</html>

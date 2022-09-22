@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //最简单的深拷贝
+        //基于JSON.stringify和JSON.parse处理后，得到的正则就不再是正则（变为空对象），
+        //得到的函数就不再是函数（变为null）
+        let arr = [1, 3, {
+            username: ' kobe'
+        }];
+        let arr4 = JSON.parse(JSON.stringify(arr));
+        arr4[2].username = 'duncan';
+        console.log(arr, arr4)
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>榴莲</li>
+        <li>臭豆腐</li>
+        <li>鲱鱼罐头</li>
+        <li>大猪蹄子</li>
+
+    </ul>
+
+
+    <script>
+        // js执行环境分为 全局环境 函数环境 Eval 环境（慎用）
+        // 当一个嵌套的内部函数（子）引用了外部嵌套（父）的函数的变量时，就产生了闭包
+        //理解一：闭包是嵌套的内部函数
+        //理解二：闭包是包含被引用的变量（函数）的对象
+        //理解三： 有权访问另外一个函数作用域的变量的函数叫作闭包（closure）
+        //产生条件：1.函数嵌套   然后2.内部函数引用了外部函数的数据（变量/函数）
+        //闭包产生的个数取决于外部函数执行的次数
+        //作用： 延伸了变量的作用范围
+        //  让函数外部的作用域访问函数内部的局部变量
+        // function books() {
+        //     var book = '书包里的书本'
+        // }
+        // console.log(book);
+
+        //闭包的应用-3秒钟后，打印所有li元素的内容
+        var lis = document.querySelector('.nav').querySelectorAll('li');
+        for (var i = 0; i < lis.length; i++) {
+            (function (i) {
+                setTimeout(function () {
+                    console.log(lis[i].innerHTML);
+                }, 3000)
+            })(i)
+        }
+
+    </script>
+
+</body>
+
+</html>
