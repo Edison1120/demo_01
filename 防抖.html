@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="fd">
+    <script>
+        //取到表单
+        var input = document.getElementById('fd')
+        var timer
+        //监听表单事件
+        input.addEventListener('keyup', function (e) {
+            debounce(1000, e.target.value)
+        })
+        //设置定时器方法
+        function debounce(delay, value) {
+            clearTimeout(timer)
+            timer = setTimeout(() => {
+                console.log(value);
+            }, delay)
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -9,14 +9,15 @@
 </head>
 
 <body>
+
+
     <script>
-        let a = Number(0.1 + 0.2).toPrecision(1)
-        console.log(a);
-        if (a = 0.3) {
-            console.log(true);
-        } else {
-            console.log(false)
+        const arr = [2, 3, 2, 5, 4, 6, 8, 2, 3, 5]
+        function unique(arr) {
+            return [...new Set(arr)]
         }
+        console.log(unique(arr))
+
     </script>
 </body>
 

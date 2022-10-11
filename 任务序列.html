@@ -9,14 +9,22 @@
 </head>
 
 <body>
+
     <script>
-        let a = Number(0.1 + 0.2).toPrecision(1)
-        console.log(a);
-        if (a = 0.3) {
-            console.log(true);
-        } else {
-            console.log(false)
+        function timerCallback2() {
+            console.log(2)
         }
+        function timerCallback() {
+            console.log(1)
+            setTimeout(timerCallback2, 0)
+        }
+        setTimeout(timerCallback, 0)
+
+
+
+
+
+
     </script>
 </body>
 

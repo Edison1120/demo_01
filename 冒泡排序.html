@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        var arr = [3, 5, 1, 6, 7, 9, 2, 8,]
+        function max(arr) {
+            //第一次循环
+            for (var i = 0; i < arr.length - 1; i++) {
+                //第二次循环
+                for (var j = 0; j < arr.length - i; j++) {
+                    //交换位置
+                    if (arr[j] < arr[j - 1]) {
+                        [arr[j], arr[j - 1]] = [arr[j - 1], arr[j]]
+                    }
+                }
+            }
+            //返回数据
+            return arr
+
+        }
+        console.log(max(arr))
+
+    </script>
+</body>
+
+</html>
